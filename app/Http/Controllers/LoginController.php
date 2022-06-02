@@ -14,14 +14,13 @@ class LoginController extends Controller
 
     public function auth(Request $request){
 
-        
+
         if (auth()->attempt(['username' => $request->username, 'password' => $request->password])) {
             echo "Oda";
         }else {
             echo "adio";
         }
     }
-
     public function create(Request $request){
         return view('auth.register');
     }
